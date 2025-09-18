@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { StudentNavigation } from "@/components/unified-navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <StudentNavigation />
+        <div className="pt-16">{/* push content below fixed header */}
+          {children}
+        </div>
       </body>
     </html>
   );
